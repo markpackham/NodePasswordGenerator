@@ -20,4 +20,4 @@ const { length, save, numbers, symbols } = program.opts();
 const generatedPassword = createPassword(length, numbers, symbols);
 
 // Output generated password
-log(generatedPassword);
+log(chalk.blue("Generated Password: ") + chalk.bold(generatedPassword));
