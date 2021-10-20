@@ -1,3 +1,5 @@
+// To save a password to a file with no symbols or numbers do
+// node index.js -s -ns
 const program = require("commander");
 const chalk = require("chalk");
 const clipboardy = require("clipboardy");
@@ -19,6 +21,11 @@ const { length, save, numbers, symbols } = program.opts();
 
 // Get generated password
 const generatedPassword = createPassword(length, numbers, symbols);
+
+// Save to file
+if (save) {
+  savePassword(generatedPassword);
+}
 
 // Copy password to clipboard
 clipboardy.writeSync(generatedPassword);
